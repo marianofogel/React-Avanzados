@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ToDo from "./toDo";
+import './todoApp.css'
 
 export default function ToDoApp() {
   const [title, setTitle] = useState(""); //GETTER Y SETTER
@@ -27,8 +28,22 @@ export default function ToDoApp() {
     temp.unshift(newToDo) //FORMAS DE ACTUALIZAR EL ESTADO, ESTAS COPIANDO EL ARRAY Y DESPUES HACES LA OPERACION CON EL UNSHIFT
 
     setToDos(temp)
+    setTitle('')
   }
 
+  function handleUpdate(id, value) {
+    const temp = [...toDos]
+    const item = temp.find(item => item.id === id)
+    item.title = value
+    setToDos(temp)
+  }
+
+  function handleDelete(id){
+    const temp = toDos.filter(item => item.id !== id)
+    setToDos(temp)
+
+
+  }
 
   return (
     <>
@@ -50,7 +65,7 @@ export default function ToDoApp() {
           {
             toDos.map((item) => (
 
-              <ToDo key={item.id} item={item} />
+              <ToDo key={item.id} item={item} onUpdate={handleUpdate} onDelete={handleDelete}/>
 
             ))
           }
