@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import WeatherForm from "./weatherForm";
 import WeatherMainInfo from "./weatherMainInfo";
+import './weatherApp.css'
 
 export default function WeatherApp() {
 
@@ -30,7 +31,7 @@ export default function WeatherApp() {
             console.log(json)
 
         } catch (error) {
-            console.log('Error')
+            console.log(error)
         }
     }
 
@@ -44,7 +45,7 @@ export default function WeatherApp() {
 
     return (
         <>
-            <div>
+            <div className='weatherContainer'>
                 <WeatherForm onChangeCity={handleChangeCity} />
                 <WeatherMainInfo weather={weather} />
             </div>

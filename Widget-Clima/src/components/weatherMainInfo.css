@@ -1,0 +1,36 @@
+.container{
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ciudad{
+    font-size: xx-large;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-decoration: underline;
+}
+
+.pais{
+    margin: 5px;
+    font-size: small;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-decoration: bold;
+}
+
+.estadoClima{
+    font-size: medium;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+.temperatura{
+    text-align: center;
+    font-size: 30px;
+}
+
+.mapa{
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+}
